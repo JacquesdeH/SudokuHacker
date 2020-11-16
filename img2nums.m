@@ -2,6 +2,8 @@ function [digit_pics,is_empty]  = img2nums(filename)
 %输入：图片的名称，如果不在当前文件夹下可添加路径
 %输出：digit_pics为81*28*28的矩阵，包含81个28*28的数字图片。digit1 = reshape(digit_pics(1,:),28,28)
 %       is_empty 为9*9矩阵，1为空 0为非空
+%手动标记部分1：数独的4个角，顺序为左上，右上右下，左下
+%手动标记部分2：数独的左上角，黑线的外边缘
 pic_size = 28;
 margin = 10;
 box_size = pic_size+margin;
