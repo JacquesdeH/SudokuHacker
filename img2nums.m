@@ -1,4 +1,4 @@
-%function [digit_pics,is_empty]  = img2nums(filename)
+function [digit_pics,is_empty]  = img2nums(filename)
 %输入：图片的名称，如果不在当前文件夹下可添加路径
 %输出：digit_pics为28*28*81的矩阵，包含81个28*28的数字图片。digit1 = reshape(digit_pics(1,:),28,28)
 %       is_empty 为9*9矩阵，1为空 0为非空
@@ -8,8 +8,8 @@
 pic_size = 28;
 margin = 10;
 box_size = pic_size+margin;
-%img = imread(filename);
-img = imread('IMG_1.JPG');
+img = imread(filename);
+%img = imread('IMG_1.JPG');
 
 
 %step 1 标出原数独图片的4个顶点
