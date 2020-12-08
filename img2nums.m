@@ -45,8 +45,8 @@ Y1 = Y + pic_size;
 figure;
 imshow(img_gray);
 hold on;
-plot(X,Y,"r*")
-plot(X1,Y1,"G*")
+plot(X,Y,'r*')
+plot(X1,Y1,'G*')
 B = [X(:),Y(:),(pic_size-1)*ones(1,81)',(pic_size-1)*ones(1,81)'];
 digit_pics = zeros(pic_size,pic_size,81);
 for i=1:81
@@ -55,7 +55,10 @@ for i=1:81
     if i ==1
         display((im2double(reshape(tmp(:),pic_size,pic_size))));
     end
-    digit_pics(:,:,i) = 1 - im2double(reshape(tmp(:),pic_size,pic_size));
+    tmp = reshape(tmp(:),pic_size,pic_size)./256;
+    tmp = im2bw(tmp,graythresh(tmp));
+    tmp = 1-tmp;
+    digit_pics(:,:,i) = tmp;
 end
 
 %imshow(reshape(digit_pics(10,:),28,28))调用方法
