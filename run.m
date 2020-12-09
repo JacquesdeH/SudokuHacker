@@ -1,6 +1,6 @@
 clear all;
 % load pics to workspace
-[digit_pics, is_empty] = img2nums_gray('image/IMG_1.JPG');
+[digit_pics, is_empty] = img2nums_gray('image/IMG_2.JPG');
 % digit_pics = ones(28, 28, 81);
 % predict model output
 load convnet_model.mat
@@ -9,6 +9,7 @@ for k=1:81
     cur_img = digit_pics(:,:,k);
     cur_min = min(min(cur_img));
     new_img = round((cur_img-cur_min)./(256-cur_min).*256);
+    new_img = round(scale(new_img, 30, 0.2));
     out = predict(convnet, new_img);
     [~, pred] = max(out);
     pred = pred - 1;
