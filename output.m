@@ -23,7 +23,7 @@ function [rgbTable] = output(solved_pics, isempty, table)
     for i = 1:9
         for j = 1:9
             if isempty(i,j) ~= 0
-                ImgNum = imread(solved_pics(i,j)+".bmp");   % 数字图片位置
+                ImgNum = imread("fonts/"+solved_pics(i,j)+".bmp");   % 数字图片位置
                 ImgNum = 255-ImgNum;    % 转换成黑色的
                 matrix=(ImgNum<210);    % 抠出图像的阈值
                 [a,b]=find(matrix==1);  % 抠出的位置
@@ -48,6 +48,5 @@ function [rgbTable] = output(solved_pics, isempty, table)
         end
     end  
     imshow(rgbTable);
-    imwrite(rgbTable, "output.jpg");
 end
 

@@ -61,7 +61,7 @@ end
 %step 5 判断是否存在空格子
 is_empty = zeros(1,81);
 for i = 1:81
-    if sum(sum(adaptivethresh(digit_pics(:,:,i)))) > pic_size * pic_size * 0.95
+    if sum(sum(adaptivethresh(digit_pics(:,:,i)))) > pic_size * pic_size * 0.975
         is_empty(i) = 1;
     end
 end
