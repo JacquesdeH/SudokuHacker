@@ -1,12 +1,12 @@
-function run(filename)
-% clear all;
+
+clear all;
 problem_idx = 1;
 % load pics to workspace
-% [digit_pics, is_empty] = img2nums_gray("photoImg/IMG_"+problem_idx+".jpg");
-[digit_pics, is_empty] = img2nums_gray(filename);
+[digit_pics, is_empty] = img2nums_gray("photoImg/IMG_"+problem_idx+".jpg");
+% [digit_pics, is_empty] = img2nums_gray(filename);
 % digit_pics = ones(28, 28, 81);
 % predict model output
-load convnet_model.mat
+load convnet_model.mat convnet
 preds = zeros(1, 81);
 for k=1:81
     cur_img = digit_pics(:,:,k);
@@ -28,5 +28,5 @@ end
 original_input = imread("originImg/input_"+problem_idx+".jpg");
 rgb_output = output(solved_pics, is_empty, original_input);
 imwrite(rgb_output, "outputImg/solved_"+problem_idx+".jpg");
-imwrite(rgb_output, "output.jpg");
+% imwrite(rgb_output, "output.jpg");
 

@@ -68,4 +68,6 @@ end
 
 is_empty = reshape(is_empty,9,9);
 
+close all;
+
 
