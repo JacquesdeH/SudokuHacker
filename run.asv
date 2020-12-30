@@ -1,5 +1,5 @@
-function run(filename)
-% clear all;
+function imgOut = run(filename)
+clear all;
 problem_idx = 1;
 % load pics to workspace
 % [digit_pics, is_empty] = img2nums_gray("photoImg/IMG_"+problem_idx+".jpg");
@@ -28,5 +28,4 @@ end
 original_input = imread("originImg/input_"+problem_idx+".jpg");
 rgb_output = output(solved_pics, is_empty, original_input);
 imwrite(rgb_output, "outputImg/solved_"+problem_idx+".jpg");
-imwrite(rgb_output, "output.jpg");
-
+imgOut = 
