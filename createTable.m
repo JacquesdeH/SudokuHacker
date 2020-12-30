@@ -9,8 +9,8 @@ for i = 1:4
     end
 end
 for i = 1:9
-    first = 4+32*i+2*(i-1)+1;
-    second = 4+32*i+2*(i-1)+2;
+    first = 4+44*i+2*(i-1)+1;
+    second = 4+44*i+2*(i-1)+2;
     for k = 1:420
         Img(first,k) = 0;
         Img(second, k) = 0;
@@ -18,10 +18,11 @@ for i = 1:9
         Img(k, second) = 0;
     end
 end
-for i = 311:312
-    for k = 1:312
+for i = 417:420
+    for k = 1:420
         Img(i,k)=0;
         Img(k,i)=0;
     end
 end
-imwrite(Img, "table.jpg");  % 把格子画出来
+% imshow(Img)
+% imwrite(Img, "table.jpg");  % 把格子画出来

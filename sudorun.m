@@ -25,8 +25,8 @@ try
 catch
     disp('Error occurred in digit recognition!')
 end
-original_input = imread("originImg/input_"+problem_idx+".jpg");
-rgb_output = output(solved_pics, is_empty, original_input);
+% original_input = imread("originImg/input_"+problem_idx+".jpg");
+rgb_output = output(solved_pics, is_empty);
 imwrite(rgb_output, "outputImg/solved_"+problem_idx+".jpg");
 imwrite(rgb_output, "output.jpg");
 

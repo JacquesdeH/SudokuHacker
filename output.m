@@ -55,6 +55,6 @@ function [rgbTable] = output(solved_pics, isempty)
             rgbTable = cat(3,tableR, tableG, tableB);
         end    
     end  
-    imshow(rgbTable);
+    % imshow(rgbTable);
 end
 
